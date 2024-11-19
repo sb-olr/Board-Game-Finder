@@ -32,7 +32,7 @@ services:
             - ./logs:/app/airflow/logs
             # $DEL_BEGIN
             - ~/.gcp_keys:/app/airflow/.gcp_keys
-            - ./dbt_lewagon:/app/airflow/dbt_lewagon
+            - ./dbt_bgf:/app/airflow/dbt_bgf
             # $DEL_END
     webserver:
         build: .
@@ -49,7 +49,7 @@ services:
             - POSTGRES_USER=airflow
         volumes:
             - ./dags:/app/airflow/dags
-            - ./data:/app/airflow/data
+            - ./database:/app/airflow/database
             - ./logs:/app/airflow/logs
         ports:
             - "8080:8080"
