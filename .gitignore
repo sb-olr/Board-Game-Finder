@@ -164,3 +164,4 @@ cython_debug/
 database/
 data/
 logs/scheduler/latest
+logs/
