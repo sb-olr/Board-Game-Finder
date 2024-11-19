@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 
 database/
+data/
+logs/scheduler/latest
