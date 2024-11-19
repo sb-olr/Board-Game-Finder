@@ -10,11 +10,13 @@ from airflow.operators.empty import EmptyOperator
 from airflow.utils.dates import days_ago
 from airflow.sensors.external_task import ExternalTaskSensor
 
+DBT_DIR = os.getenv("DBT_DIR")
+
 def run_dbt():
-    # subprocess.run(["dbt", "run", "--project-dir", "/path/to/your/dbt/project"], check=True)
+    subprocess.run(["dbt", "run", "--project-dir", DBT_DIR], check=True)
 
 def test_dbt():
-    # subprocess.run(["dbt", "test", "--project-dir", "/path/to/your/dbt/project"], check=True)
+    subprocess.run(["dbt", "test", "--project-dir", DBT_DIR], check=True)
 
 with DAG(
     'transform_dag',
@@ -31,7 +33,6 @@ with DAG(
         task_id='wait_for_load',
         external_dag_id='load_dag',
         allowed_states=["success"],
-        execution_date="{{ ds }}",
         poke_interval=10,
         timeout=60 * 10,
     )
