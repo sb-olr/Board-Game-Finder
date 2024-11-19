@@ -5,9 +5,6 @@ import time
 from google.cloud import storage
 import os
 
-# Set Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/ademircies/.gcp_keys/bgf-project-442110-0572b0978980.json"
-
 def get_game_data(game_ids):
     """Fetch game data from BoardGameGeek API."""
     url = "https://boardgamegeek.com/xmlapi2/thing"
