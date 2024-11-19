@@ -24,7 +24,7 @@ with DAG(
     start_export_task = EmptyOperator(task_id='start_extract')
 
     export_task = BashOperator(
-        task_id='Get data with API',
+        task_id='Get_data_with_API',
         bash_command=f"poetry run python {api_path}",
     )
 
