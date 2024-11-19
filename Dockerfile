@@ -18,6 +18,7 @@ WORKDIR $AIRFLOW_HOME
 
 COPY scripts scripts
 RUN chmod +x scripts/entrypoint.sh
+RUN chmod +x scripts/data-script.py
 
 COPY pyproject.toml poetry.lock ./
 
