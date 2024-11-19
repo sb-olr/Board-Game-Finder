@@ -28,7 +28,7 @@ services:
             - AIRFLOW__CORE__LOAD_EXAMPLES=false
         volumes:
             - ./dags:/app/airflow/dags
-            - ./data:/app/airflow/data
+            - ./database:/app/airflow/database
             - ./logs:/app/airflow/logs
             # $DEL_BEGIN
             - ~/.gcp_keys:/app/airflow/.gcp_keys
