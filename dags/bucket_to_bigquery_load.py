@@ -24,15 +24,6 @@ with DAG(
 
     start_load_task = EmptyOperator(task_id='start_load')
 
-    wait_for_extract_task = ExternalTaskSensor(
-        task_id='wait_for_extract',
-        external_dag_id='extract_dag',
-        allowed_states=["success"],
-        execution_date="{{ ds }}",
-        poke_interval=10,
-        timeout=60 * 10,
-    )
-
     create_dataset_task = BigQueryCreateEmptyDatasetOperator(
             task_id='create_dataset',
             gcp_conn_id='google_cloud_connection',
@@ -40,11 +31,11 @@ with DAG(
     )
     load_to_bigquery_task = GCSToBigQueryOperator(
         task_id='load_to_bigquery',
-        # bucket='',
-        # source_objects=f'nameofthefile.csv',
+        bucket='bgf_game_data_bronze_layer',
+        source_objects=['bgf_game_data_*.csv'],
         gcp_conn_id='google_cloud_connection',
-        # destination_project_dataset_table='bgf_project_silver.something'
-        # source_format='CSV',
+        destination_project_dataset_table='bgf_project_silver.boardgamefinder',
+        source_format='CSV',
         skip_leading_rows=1,
         write_disposition='WRITE_APPEND',
     )
@@ -52,4 +43,4 @@ with DAG(
     complete_load_task = EmptyOperator(task_id='complete_load')
 
 
-    start_load_task >> wait_for_extract_task >> create_dataset_task >> load_to_bigquery_task >> complete_load_task
+    start_load_task >> create_dataset_task >> load_to_bigquery_task >> complete_load_task

@@ -18,7 +18,7 @@ with DAG(
     catchup=True,
 ) as export_dag:
 
-    # api_name = f""
+    api_name = f"scripts/data-script.py"
     api_path = f"{AIRFLOW_HOME}/{api_name}"
 
     start_export_task = EmptyOperator(task_id='start_extract')
