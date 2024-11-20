@@ -1,21 +1,36 @@
+version: 2
 
-# version: 2
-#  CREATE MODELS
-# models:
-#   - name: my_first_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
-
-#   - name: my_second_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+models:
+  - name: stg_games
+    description: "Games table from source data"
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        data_tests:
+          - not_null
+          - unique
+      - name: game_name
+        description: "Name of the board game."
+        data_tests:
+          - not_null
+          - unique
+      - name: year_published
+        description: "Release year of the game."
+      - name: min_players
+        description: "Minimum number of players required to play."
+      - name: max_players
+        description: "Maximum number of players allowed."
+      - name: game_duration
+        description: "Average playing time in minutes."
+      - name: min_playing_time
+        description: "Minimum estimated playing time."
+      - name: max_playing_time
+        description: "Maximum estimated playing time."
+      - name: min_age
+        description: "Minimum recommended age to play."
+      - name: game_description
+        description: "Description of the game."
+      - name: image_path
+        description: "URL of the game's image."
+      - name: game_rank
+        description: "Rank of the game on BoardGameGeek."
