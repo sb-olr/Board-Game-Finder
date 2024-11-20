@@ -76,3 +76,36 @@ models:
         description: "Manufacturer-recommended age for the game."
       - name: manufacturer_reco_playtime
         description: "Manufacturer-recommended playtime."
+
+  - name: stg_game_themes
+    description: "Themes for the games."
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        tests:
+          - not_null
+          - unique
+      - name: theme
+        description: "Theme of the game (e.g., Sci-Fi, Historical)."
+
+  - name: stg_game_mechanics
+    description: "Themes for the games."
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        tests:
+          - not_null
+          - unique
+      - name: mechanics
+        description: "Mechanics of the game (e.g., Set Collection)."
+
+  - name: stg_game_category
+    description: "Category for the games."
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        tests:
+          - not_null
+          - unique
+      - name: category
+        description: "Category of the game (e.g., Strategy, Party)."
