@@ -6,12 +6,12 @@ models:
     columns:
       - name: game_id
         description: "Unique identifier for the board game."
-        data_tests:
+        tests:
           - not_null
           - unique
       - name: game_name
         description: "Name of the board game."
-        data_tests:
+        tests:
           - not_null
           - unique
       - name: year_published
@@ -34,3 +34,45 @@ models:
         description: "URL of the game's image."
       - name: game_rank
         description: "Rank of the game on BoardGameGeek."
+
+  - name: stg_game_ratings
+    description: "Ratings and statistics for the games."
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        tests:
+          - not_null
+          - unique
+      - name: weight
+        description: "Complexity weight of the game."
+      - name: num_ratings
+        description: "Total number of user ratings."
+      - name: avg_rating
+        description: "Average user rating."
+      - name: bayes_avg_rating
+        description: "Bayesian average rating."
+      - name: num_comments
+        description: "Total number of user comments."
+      - name: num_weight_votes
+        description: "Number of weight votes given by users."
+      - name: num_owners
+        description: "Number of owners of the game."
+
+  - name: stg_game_recommendations
+    description: "Community and manufacturer recommendations for the games."
+    columns:
+      - name: game_id
+        description: "Unique identifier for the board game."
+        tests:
+          - not_null
+          - unique
+      - name: community_min_playtime
+        description: "Community-recommended minimum playtime."
+      - name: community_max_playtime
+        description: "Community-recommended maximum playtime."
+      - name: community_age_reco
+        description: "Community's recommended age for the game."
+      - name: manufacturer_age_reco
+        description: "Manufacturer-recommended age for the game."
+      - name: manufacturer_reco_playtime
+        description: "Manufacturer-recommended playtime."

@@ -35,3 +35,6 @@ models:
     staging:
       +materialized: table
       +location: US
+      +persist_docs:
+        relation: true
+        columns: true

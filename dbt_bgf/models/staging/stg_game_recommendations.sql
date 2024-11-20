@@ -8,6 +8,6 @@ SELECT
     CAST(ComAgeRec AS INT64) AS community_age_reco,
     MfgAgeRec AS manufacturer_age_reco,
     MfgPlaytime AS manufacturer_reco_playtime
-
+FROM
 {{ source('bgf_project_silver', 'boardgamefinder') }}
 
