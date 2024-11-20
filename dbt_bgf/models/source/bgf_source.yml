@@ -1,0 +1,8 @@
+sources:
+  - name: bgf_project_silver  # Name of the source (can be used as {{ source('bgf_project_silver', 'table_name') }})
+    database: bgf-project-442110  # Project ID in BigQuery
+    schema: bgf_project_silver
+
+
+    tables:
+      - name: boardgamefinder
