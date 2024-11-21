@@ -6,9 +6,9 @@ The Board Game Data Engineering Project for Le Wagon Bootcamp explores and analy
 
 ## Team
 
-	•	Erman
-	•	Arda
-	•	Sujit
+•	Erman
+•	Arda
+•	Sujit
 
 Interested in contributing? Feel free to fork the repository and submit a pull request!
 
