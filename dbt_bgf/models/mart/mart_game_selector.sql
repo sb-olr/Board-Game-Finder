@@ -1,20 +1,20 @@
 {{config(materialized='view')}}
 
 SELECT
-    g.game_id AS `Game ID`,
-    g.game_name AS `Game Name`,
-    g.year_published AS `Year Published`,
-    g.min_players AS `Nr Players Min`,
+    g.game_id AS `Game_ID`,
+    g.game_name AS `Game_Name`,
+    g.year_published AS `Year_Published`,
+    g.min_players AS `Nr_Players_Min`,
     g.max_players,
-    g.game_duration AS `Game Duration`,
+    g.game_duration AS `Game_Duration`,
     g.image_path,
-    gr.avg_rating AS `Game Rating`,
-    gr.num_ratings AS `Nr Ratings`,
-    gr.num_owners AS `Nr Owners`,
-    gr.num_comments AS `Nr Comments`,
+    gr.avg_rating AS `Game_Rating`,
+    gr.num_ratings AS `Nr_Ratings`,
+    gr.num_owners AS `Nr_Owners`,
+    gr.num_comments AS `Nr_Comments`,
     g.game_description AS `Description`,
-    gm.game_mechanics AS `Select Mechanics`,
-    gc.game_category AS `Select Category`
+    gm.game_mechanics AS `Select_Mechanics`,
+    gc.game_category AS `Select_Category`
 
 FROM
     {{ ref('stg_games') }} g
