@@ -5,7 +5,7 @@
 The Board Game Data Engineering Project for Le Wagon Bootcamp explores and analyzes board game datasets to uncover trends, ratings, and player preferences. Using modern data engineering tools, this project processes data and creates interactive dashboards in Looker Studio, making insights accessible for board game enthusiasts and analysts.
 
 ## Dashboard Link
-https://lookerstudio.google.com/reporting/2aa92362-f639-493d-94a5-d827e4c6b16c/page/i1sUE
+https://lookerstudio.google.com/u/0/reporting/355bd9ed-557c-41dd-8c3c-8f837c1880b1/page/p_3dxeeuo5md
 
 ## Team
 
