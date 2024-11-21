@@ -77,7 +77,7 @@ models:
       - name: manufacturer_reco_playtime
         description: "Manufacturer-recommended playtime."
 
-  - name: stg_game_themes
+  - name: stg_game_theme
     description: "Themes for the games."
     columns:
       - name: game_id

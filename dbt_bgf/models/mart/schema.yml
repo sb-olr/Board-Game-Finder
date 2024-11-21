@@ -1,21 +1,54 @@
 
-# version: 2
-#  CREATE MODELS
-# models:
-#   - name: my_first_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+version: 2
 
-#   - name: my_second_dbt_model
-#     description: "A starter dbt model"
-#     columns:
-#       - name: id
-#         description: "The primary key for this table"
-#         data_tests:
-#           - unique
-#           - not_null
+models:
+  - name: mart_game_selector
+    description: "View for the dashboard"
+    config:
+      materialized: view
+
+    columns:
+      - name: "Game ID"
+        description: "Unique identifier for the game."
+
+      - name: "Game Name"
+        description: "The name of the game."
+
+      - name: "Year Published"
+        description: "The year the game was first published."
+
+      - name: "Nr. Players (Min)"
+        description: "The minimum number of players required to play the game."
+
+      - name: max_players
+        description: "The maximum number of players supported by the game."
+
+      - name: "Game Duration"
+        description: "The average duration of the game in minutes."
+
+      - name: image_path
+        description: >
+          URL or path to the game's representative image.
+
+      - name: "Game Rating"
+        description: "The average user rating of the game."
+
+      - name: "Nr. Ratings"
+        description: "The total number of user ratings for the game."
+
+      - name: "Nr. Owners"
+        description: "The estimated number of users who own the game."
+
+      - name: "Nr. Comments"
+        description: "The total number of user comments for the game."
+
+      - name: "Description"
+        description: "A brief description of the game."
+
+      - name: "Select Mechanics"
+        description: >
+          The game mechanics associated with the game, aggregated as a single field.
+
+      - name: "Select Category"
+        description: >
+          The game categories associated with the game, aggregated as a single field.
